@@ -19,8 +19,8 @@ public class ElevatorSubsystem extends SubsystemBase {
   private final TalonFX elevatorRight;
 
   public ElevatorSubsystem() {
-    elevatorLeft = new TalonFX(Constants.IDs.ELEVATOR_LEFT);
-    elevatorRight = new TalonFX(Constants.IDs.ELEVATOR_RIGHT);
+    elevatorLeft = new TalonFX(Constants.IDs.ELEVATOR_LEFT, "MainCANivore");
+    elevatorRight = new TalonFX(Constants.IDs.ELEVATOR_RIGHT, "MainCANivore");
   }
 
   public void setMotorSpeed(double speed) {
