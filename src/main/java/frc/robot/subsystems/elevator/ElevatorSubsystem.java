@@ -1,6 +1,9 @@
 package frc.robot.subsystems.elevator;
 
 import com.ctre.phoenix6.hardware.TalonFX;
+
+import edu.wpi.first.units.measure.AngularVelocity;
+import edu.wpi.first.units.measure.Current;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -26,5 +29,13 @@ public class ElevatorSubsystem extends SubsystemBase {
   public void setMotorSpeed(double speed) {
     elevatorRight.set(speed);
     elevatorLeft.set(-speed);
+  }
+
+  public AngularVelocity getLeftMotoAngularVelocity(){
+    return elevatorLeft.getVelocity().getValue();
+  }
+
+  public Current getLeftMotorTorqueCurrent(){
+    return elevatorLeft.getTorqueCurrent().getValue();
   }
 }
